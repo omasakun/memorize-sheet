@@ -439,7 +439,7 @@ namespace GSheet {
 				return;
 			}
 			const QAndARange = sheetName + "!A2:H" + (QCount + 1);
-			getRangeRaw(fileId, QAndARange, cells => {
+			getRange(fileId, QAndARange, cells => {
 				let warnMsgs: string[] = [];
 				const items: QAndA[] = cells.map((cells, i) => {
 					for (let i = cells.length; i < 8; i++)cells.push("");
