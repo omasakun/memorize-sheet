@@ -234,13 +234,13 @@ class QAndAUI {
 			a.innerText = _.a;
 			onClick(q, () => {
 				remC(div, "trans-a");
-				remC(div, "wrong");
-				addC(div, "correct");
+				remC(div, "correct");
+				addC(div, "wrong");
 			});
 			onClick(a, () => {
 				remC(div, "trans-a");
-				remC(div, "correct");
-				addC(div, "wrong");
+				remC(div, "wrong");
+				addC(div, "correct");
 			});
 			addC(div, "trans-a");
 			addC(q, "qanda_item_q");
