@@ -1,0 +1,90 @@
+// naming convention: ee-[name]
+
+@mixin ee-link($bg,$fg)
+	transition: 0.1s all
+	color: $fg
+	padding: 0 0.2em
+	border-radius: 0.2em
+	display: inline-block
+	text-decoration: none
+	&::before, &::after
+		content: ''
+		display: block
+		width: 100%
+		background: $fg
+		transition: all .1s ease-in-out
+
+	&::before
+		position: relative
+		opacity: 0.4
+		top: 1.2em
+		height: 1px
+	&::after
+		margin-left: 50%
+		width: 0
+		height: 2px
+	&:hover::after
+		margin-left: 0
+		width: 100%
+	&:active
+		color: $bg
+		&::after
+			height: calc(1em + 4px)
+			width: calc(100% + 4px)
+			margin-left: -2px
+			margin-top: calc(-1em - 2px)
+
+@mixin ee-input($bg,$fg,$border,$bg-hover,$fg-hover)
+	transition: 0.1s all
+	background: $bg
+	outline: none
+	border: none
+	border-top: 1px solid transparent
+	border-bottom: 1px solid $border
+	margin: 0 0.5em
+	padding: 0 0 0 0.5em
+	color: inherit
+	&:hover
+		background-color: $bg-hover
+		border-bottom-color: transparent
+		color: $fg-hover
+	&::selection
+		background-color: $fg
+		color: $bg
+
+@mixin ee-outline-button($bg,$fg,$border,$bg-hover,$fg-hover,$fg-active)
+	transition: 0.1s all
+	display: inline-block
+	border: 1px solid $border
+	background-color: $bg
+	color: $fg
+	border-radius: 4px
+	outline: none
+	cursor: pointer
+	padding: 0.2em 0.5em
+	margin: 0.2em 0.2em
+	&:hover
+		background-color: $bg-hover
+		border-color: $bg-hover
+		color: $fg-hover
+	&:active
+		color: $fg-active
+
+@mixin ee-dotted-hr($border)
+	border: none
+	height: 0
+	border-top: 2px dotted $border
+	margin: 0
+
+@mixin ee-selectable-li($fg-active,$bg-selected,$fg-selected)
+	transition: all 0.1s
+	cursor: pointer
+	padding: 0.1em 0
+	user-select: none
+	&.selected
+		background-color: $bg-selected
+		color: $fg-selected
+	&:hover
+		padding-left: 1em
+	&:active
+		color: $fg-active

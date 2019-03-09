@@ -1,0 +1,49 @@
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="description" content=package.description)
+		meta(name="author" content=package.author)
+		title #{user.title}
+		script(src='https://apis.google.com/js/api.js')
+		link(rel="stylesheet" href="./css/index.css")
+		script(src="./js/bundle.js")
+	body
+		#clientid.fullW.fullH.grid.hide
+			#clientid_title.center
+				h1 #{user.title}
+				h2 What's your GAPI Client ID?
+			#clientid_list
+				ul#clientid_ul.selectable.listV
+					li Hello
+				input#clientid_input
+				button#clientid_enter OK
+				.fullW.center
+					button#clear_all Clear All ClientID/FileID
+		#signin.fullW.fullH.grid.hide
+			#signin_title.center
+				h2 Please signin with google
+			#signin_main
+				button#signin_btn Signin
+		#fileid.hide
+			h2 Select File
+			ul#fileid_ul.selectable.listV
+				li Hello
+			.fullW.cH
+				input#fileid_input.grow.shrink
+				button#fileid_enter OK
+		#qlist.hide
+			h2 Select Set
+			ul#qlist_ul.selectable.listV
+				li Hello
+		#qanda.hide
+			#qanda_itemroot
+				.qanda_item
+					div ajkldjfsjlfkjsdlfjksdjflksdjf
+					div jdflkjsdfkjdsfjldkngsf;ghfkjhgsljhjk
+			#qanda_foot
+				button#quanda_next.fullW.center.seamless Go Next
+				span#quanda_log 100/829380
+				
