@@ -361,7 +361,7 @@ function cells2QAndA(qItem: QItem, row: number, cells: string[], warn: (s: strin
 }
 function qAndA2UpdateReq(qAndA: QAndA) {
 	const _ = qAndA;
-	const row = _.row, sheet = _.qItem.sheetTitle;
+	const row = _.row, sheet = "'" + _.qItem.sheetTitle + "'";
 	const intervalText = _.interval ? _.interval.toString() : "0";
 	// const range = sheet + "!A" + row + ":H" + row;
 	// const values = [[_.q, _.a, _.log, _.state, DateUtil.str(_.prevDate), intervalText, DateUtil.str(_.nextDate), _.failCount.toString()]];
